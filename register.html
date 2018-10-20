@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ptaszniki</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Ptaszniki</h1>
+            <nav>
+                <ul class="nav_menu">
+                    <li><a href="index.html">Home</a> </li>
+                    <li><a href="info.html">Inforacje</a></li>
+                    <li><a href="gallery.html">Galeria</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
+                    <li><a href="register.html">Rejestracja</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="content">
+
+
+            <div class="main_content">
+                <h2>Zarejestruj się by otrzymywać newsletter!</h2>
+                <div class="register_form">
+                    <form action="#" method="POST">
+                        <div class="row">
+                            <label for="name">Imię i nazwisko:</label>
+                            <input type="text" name="name" id="name" required onkeyup="validateForm()">
+                        </div>
+                        <div class="row">
+                            <label for="username">Nazwa użytkownika: </label>
+                            <input type="text" name="username" id="username" required onkeyup="validateForm()">
+                        </div>
+                        <div class="row">
+                            <label for="email">E-mail:</label>
+                            <input type="email" name="email" id="email" required onkeyup="validateForm()">
+                        </div>
+                        <div class="row">
+                            <label for="password">Hasło:</label>
+                            <input type="password" name="password" id="password" required onkeyup="validateForm()">
+                        </div>
+                        <div class="row">
+                            <input type="submit" id="submitbutton" disabled=true>
+                        </div>
+                    </form>
+
+                    <script>
+                        function validateForm() {
+                            var name = document.getElementById("name").value;
+                            var nameRegex = /^([a-zA-Z]+){3,15}\s+([a-zA-Z]+){3,20}/;
+                            var nameMatches = nameRegex.test(name);
+
+                            var userName = document.getElementById("username").value;
+                            var userNameRegex = /^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$/;
+                            var userNameMatches = userNameRegex.test(userName);
+
+                            var email = document.getElementById("email").value;
+                            var emailRegex = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+                            var emailMatches = emailRegex.test(email);
+
+                            var password = document.getElementById("password").value;
+                            var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+                            var passwordMatches = passwordRegex.test(password);
+
+                            if (nameMatches && userNameMatches && emailMatches && passwordMatches) {
+                                document.getElementById("submitbutton").disabled = false;
+                            } else {
+                                document.getElementById("submitbutton").disabled = true;
+                            }
+                        }
+                    </script>
+                </div>
+
+            </div>
+
+
+            <div class="sidebar">
+                <aside>
+                    <h2>Ciekawe linki:</h2>
+                    <ul>
+                        <li><a href="http://www.ptasznik.pl">ptasznik.pl</a></li>
+                        <li><a href="https://www.youtube.com/user/kubazajac9">Kanał youtube "Ptaszniki Zająca"</a></li>
+                        <li><a href="https://www.terrarium.com.pl/">terrarium.com.pl</a></li>
+                    </ul>
+                </aside>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <footer>Wszystkie prawa zastrzeżone &copy;</footer>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
