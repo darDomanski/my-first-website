@@ -7,7 +7,7 @@ body {
 }
 
 div.container {
-    width: 1140px;
+    width: 80%;
     margin: auto;
     padding: 0 15px;
 }
@@ -36,6 +36,7 @@ header, .main_content, .sidebar, .footer {
 }
 
 header {
+    width: 100%;
     margin-bottom: 15px;
 }
 
@@ -78,4 +79,22 @@ form label {
     text-align: end;
     float: left;
     margin-right: 20px;
+}
+
+div.gallery figure {
+    float: left;
+    width: 180px;
+    height: 140px;
+}
+
+div.gallery img {
+    width: 100%;
+}
+
+.welcome_image {
+    width: 30%;
+}
+
+.welcome_image img {
+    width: 100%;
 }
